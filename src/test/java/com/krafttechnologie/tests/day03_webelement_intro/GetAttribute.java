@@ -16,7 +16,7 @@ public class GetAttribute {
         // getAttribute() --> it gives the attribute that value i shared
 
         String value = emailInputBox.getAttribute("class");
-        String value2 = emailInputBox.getAttribute("type");
+        //String value2 = emailInputBox.getAttribute("type");
         System.out.println("value = " + value);
 
         driver.quit();
