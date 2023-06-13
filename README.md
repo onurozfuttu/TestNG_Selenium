@@ -21,5 +21,5 @@ Examples of verifying data
 Id Locator\
 Name Locator\
 Tag Name Locator\
-Link Text and Partial Link Text\
+Link Text and Partial Link Text
 
