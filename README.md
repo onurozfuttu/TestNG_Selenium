@@ -23,3 +23,12 @@ Name Locator\
 Tag Name Locator\
 Link Text and Partial Link Text
 
+<b>Day 05</b>\
+<i>Absolute Xpath<\i>
+<i>Relative Xpath<\i>
+  Locating attribute and text
+  starts-with and ends-with
+  contains
+  'and' and 'or'
+  Parent to child, child to parent, sibling to previous sibling(preceding-sibling::*)
+
