@@ -24,8 +24,8 @@ Tag Name Locator\
 Link Text and Partial Link Text
 
 <b>Day 05</b>\
-<i>Absolute Xpath<\i>
-<i>Relative Xpath<\i>
+<i>Absolute Xpath</i>
+<i>Relative Xpath</i>
   Locating attribute and text\
   starts-with and ends-with\
   contains\
