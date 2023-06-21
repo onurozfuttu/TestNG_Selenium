@@ -31,4 +31,29 @@ Link Text and Partial Link Text
   contains\
   'and' and 'or'\
   Parent to child, child to parent, sibling to previous sibling(preceding-sibling::*)
+  
+<b>Day 06</b>\
+<i>Css Locator</i>\
+  Id\
+  Class\
+  Attribute-value\
+  starts-with, ends-with, contains\
+  Multiple attribute-value\
+  Index\
+  Parent to child and siblings
+  
+  
+<b>Day 07</b>\
+<i>TestNG</i>\
+  @Test\
+  @BeforeMethod\
+  @AfterMethod\
+  @Ignore\
+  @BeforeClass(setupClass)\
+  @AfterClass(teardownClass)
+<i>Assertion</i>\
+   .assertEquals()\
+   .assertNotEquals()\
+   .assertTrue()\\
+   .assertFalse()
 
