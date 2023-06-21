@@ -10,14 +10,14 @@ public class C02_BeforeAfterMethod {
         System.out.println("WebDriver, Opening Browser");
     }
 
-    @Test
+    @Test (priority = 1)
     public void test1(){
         //System.out.println("WebDriver, Opening Browser");
         System.out.println("First Test Case");
         //System.out.println("Closing Browser, quit");
     }
 
-    @Test
+    @Test (priority = 2)
     public void test2(){
         //System.out.println("WebDriver, Opening Browser");
         System.out.println("Second Test Case");
