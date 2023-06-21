@@ -57,3 +57,20 @@ Link Text and Partial Link Text
    .assertTrue()\\
    .assertFalse()
 
+   <b>Day 08</b>\
+<i>WebElements</i>\
+  isSelected()\
+  isDisplayed()\
+  isEnabled()\
+
+  <b>Day 09</b>\
+<i>findElements and DropDown</i>\
+  findElements()\
+  Select Class\
+  getOptions()\
+  selectByVisibleText()\
+  selectByIndex()\
+  selectByValue()\
+  getFirstSelectedOption()\
+  Reaching dropdown options as removing browser blur
+
