@@ -1,0 +1,37 @@
+findElements() and Drop Downs
+
+findElements()
+Birden çok elementi List<WebElement> olarak döndürür. Eğer locator bir element bulamazsa 0 çevirir.
+
+her bir element .get(sayı) ile alınabilir.
+
+Select Class
+Select sınıfı aracılığıyla findElements aracılığıyla belirlenmiş getOptions() ile liste içine atılabilir ve böylece dropdown optionslara
+ulaşılabilir.
+
+örn:
+WebElement dropDownMenu = driver.findElement(By.xpath("//select[@id='oldSelectMenu']"));
+Select select = new Select(dropDownMenu);
+
+getOptions()
+List<WebElement> options = select.getOptions();
+
+selectByVisibleText()
+Select aracılığıyla alınmış olan liste içinde value aracılığıyla seçim yapılır.
+örn:
+Dropdown menüde Green, Blue, Yellow var.
+
+select.selectByVisibleText("Blue");   --> Blue seçildi.
+
+selectByIndex(sayı)
+Select aracılığıyla alınmış liste içerisinden index aracılığıyla seçim yapılır.
+örn:select.selectByIndex(2);
+
+selectByValue("value değeri")
+Select aracılığıyla alınmış liste içerisinde value attribute karşısında yer alan değere göre seçim yapılır.
+örn:select.selectByValue("7");
+
+getFirstSelectedOption()
+WebElement selectedElement = select.getFirstSelectedOption(); --> seçilen element WebElement'e atandı.
+
+

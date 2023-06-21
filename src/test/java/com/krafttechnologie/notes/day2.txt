@@ -1,0 +1,23 @@
+WebDriver Basics
+Navigation:
+driver.navigate().back();
+Sayfanın geriye gitmesi sağlanır.
+
+driver.navigate().forward();
+Sayfanın ileri gitmesi sağlanır.
+
+driver.navigate().refresh();
+Sayfayı yeniler.
+
+Close and Quit
+driver.close();
+Sayfanın tabını kapatır. Tek tab ise tarayıcı kapanır.
+
+driver.quit();
+Sayfanın tamamını kapatır.
+
+driver.getCurrentUrl()
+Sayfanın linkini alır.
+
+getPageSource()
+Sayfanın kaynak kodunun tamamı alınır.

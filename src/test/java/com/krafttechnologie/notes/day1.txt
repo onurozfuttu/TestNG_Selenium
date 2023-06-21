@@ -1,0 +1,13 @@
+Automation Intro
+
+WebDriverManager.chromedriver().setup();
+WebDriverManager isimli kütüphane aracılığıyla Selenium'un browser ile konuşması sağlanır.
+
+WebDriver driver = new ChromeDriver();
+WebDriver objesi oluşturulu ve hangi tarayıcı kullanılacaksa onun alt sınıfı seçilir.
+
+driver.manage().window().maximize();
+Tarayıcıyı tam sayfa haline getirilir. Selenium görülmeyen yerlere erişemezse test tamamlanamayabilir.
+
+driver.getTitle();
+Sayfanın title'ı alınır.

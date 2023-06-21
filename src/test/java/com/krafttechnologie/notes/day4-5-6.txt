@@ -1,0 +1,188 @@
+-- Basic Locators --
+
+IdLocator: By.id("id")
+#id ile locate edilir.
+
+NameLocator:
+By.name("name value")
+name attribute değerine karşılık gelen value ile locate edilir.
+
+TagNameLocator:
+By.cssSelector("[attribute='value']")
+örn: By.tagName("h3")
+[attribute='value'] birlikte yazılarak locate edilir.
+
+LinkText and PartialLinkText:
+By.linkText("link text")
+örn: By.linkText("Example 1: Element on page that is hidden")
+<a href=''>Link String</a> Link String bölümünün tamamı yazılarak alınır.
+
+By.partialLinkText("link text içerisinden bir bölüm")
+örn: By.partialLinkText("rendered")
+<a href=''>Link String</a> Link String bölümünün bir kısmı yazılarak alınır.
+
+
+
+
+-- Xpath --
+Absolute:
+DOM sırasıyla yukarıdan aşağıya doğru render yapar. html kısmından gidilecek yere kadar parentlar alınarak kullanılır.
+örn: By.xpath("html/body/main/div/nav/ol/li/a")
+örn2: By.xpath("html/body/main/div/nav/ol/li[2]") //2. li webelementini alır.
+
+Relative:
+First formula:
+Attribute value eşleşmesi alınarak locate edilir.
+By.xpath("//tagName[@attribute='value']")
+örn: By.xpath("//input[@id='twotabsearchtextbox']")
+örn2: By.xpath("//input[@value='Git']")
+
+Çift slash ile tüm page source taranır. gidilmek istenen tagname yazıldıktan sonra [] içerisine alınır ve @ harfi(attribute geleceğini simgeliyor) ile attribute='value' alınır.
+
+Text ile web elementi locate etmek:
+By.xpath("//tagName[text()='String']")
+By.xpath("//tagName[.='String']")
+
+örn: By.xpath("//span[text()='\"Selenium\"']")
+
+Second Formula(starts-with()):
+
+Valueların başlangıç değerleri 1/1 olana kadar yazarak locate edilir.
+By.xpath("//tagName[starts-with(@attribute,'value başlangıç karakterleri')]")
+örn: By.xpath("//label[starts-with(@for,'inputP')]")
+
+Text için de kullanılabilir.
+By.xpath("//tagName[starts-with(text(),'String başlangıç karakterleri')]")
+örn: By.xpath("//label[starts-with(text(),'P')]")
+
+not: ends-with olanı da var ancak firefox ile uyumlu çalışıyor. geri kalan tarayıcılar da çalışmıyor.
+
+Third Formula(contains()):
+Value içerisindeki bir kısım değeri alınarak locate edilir.
+(By.xpath("//tagName[contains(@attribute,'value'nun bir kısmı)]")
+örn: (By.xpath("//label[contains(@for,'tC')]")
+
+Text için de kullanılabilir.
+By.xpath("//tagName[contains(text(),'String değerinin bir kısmı')]")
+örn: By.xpath("//label[contains(text(),'Pi')]")
+
+Fourth Formula('and' & 'or'):
+And:
+Bir webelement içerisinde birden fazla tag kullanılarak locate edilir.
+By.xpath("//tagName[@attribute='value'][@attribute='value']")
+By.xpath("//tagName[@attribute='value' and @attribute='value']")
+
+örn: By.xpath("//button[@type='button'][@data-bs-target='#basicModal']")
+
+Or:
+Bir webelement içerisinde kullanılan iki tagden birisi uyuştuğunda locate eder.
+By.xpath("//tagName[@attribute='value' or @attribute='value']")
+
+Fifth Formula(family members):
+Parent to child:
+Bir üst webelement üstünden child webelementi locate edilir.
+By.xpath("//tagName[@attribute='value']/tagName")
+örn: By.xpath("//div[@class='row mb-3'][1]/label")
+örn: //input[@id='email' and ./parent::div] //. current öncekini simgeliyor sonrası özelleştirme
+
+Child to parent:
+Bir alt webelement üstünden parent webelementi locate edilir. /../ sayısı kadar üst webelementlere geçer.
+By.xpath("(//tagName[@attribute='value'])[1]/../tagName")
+/parent::tagName
+/ancestor::tagName
+/following-sibling::tagName
+örn://a[text()='Canon EOS 5D']/ancestor::div[@class="product-thumb transition"]//button[@data-original-title="Add to Wish List"]
+örn: By.xpath("(//input[@type='text'])[1]/../../label")
+
+Sibling to previous sibling:
+Alt kardeş üstünden bir üst kardeş locate edilir.
+By.xpath("(//tagName[@attribute='value'])/preceding-sibling::*")
+örn: By.xpath("(//div[@class='col-sm-10'])[1]/preceding-sibling::*")
+
+Parent to grandson:
+Üst webelement üstünden child altında yer alan torun webelementler locate edilir.Üst webelement parantez içerisine alınır ve altındaki weblementlere braketler içerisinden ulaşılır.
+By.xpath("(//tagName[@attribute='value']//tagName)[sayı]")
+örn: By.xpath("(//form[@method='post']//label)[1]")
+
+
+
+
+-- Css --
+Id:
+Webelement içerisinde yer alan id'nin value'sunun başına # konularak locate edilir.
+By.cssSelector("#value")
+örn: By.cssSelector("#email")
+
+Id value önüne tagname ekleyerek daha geniş kapsamlı locate yapılabilir.
+By.cssSelector("tagName#value")
+
+Class:
+Webelement class'ının value'su kullanılarak locate edilir. Başına . konulur ve eğer valuelar arasında boşluk varsa boşluklar yerine . konulur.
+By.cssSelector(".classValue")
+By.cssSelector(".classValue.classValue")
+örn:
+By.cssSelector(".card-title.text-center.pb-0.fs-4")
+
+Attribute-Value:
+Webelement içerisinde yer alan attribute-value aracılığıyla locate edilir.
+By.cssSelector("tagName[attribute='value']")  //tagName kullanmadan da kullanılabilir.
+örn:
+By.cssSelector("input[name='email']")
+
+starts-with:
+Webelement içerisinde tag ve onun valuesunun başlangıç değerleri kullanılarak locate edilir. text() özelliği yoktur.
+By.cssSelector("tagName[attribute^='Value başlangıç değerleri']") //tagName olmadan da kullanılır.
+örn: By.cssSelector("p[class^='t']")
+
+ends-with:
+Webelement içerisinde tag ve onun valuesunun son değerleri kullanılarak locate edilir. text() özelliği yoktur.
+By.cssSelector("tagName[attribute$='Value son değerleri']") //tagName olmadan da kullanılır.
+örn: By.cssSelector("label[for$='Me']")
+örn2: By.cssSelector("[class$='s']")
+
+contains:
+Webelement içerisinde tag ve onun valuesunun iç değerleri kullanılarak locate edilir. text() özelliği yoktur.
+By.cssSelector("tagName[attribute*='Value iç değerleri']")
+örn: By.cssSelector("label[for*='mai']")
+
+Multiple Attribute Value:
+Webelement içerisinde birden fazla tag:value kullanarak locate edilir.
+By.cssSelector("tagName[attribute='value'][attribute='value']") // tagName olmadan da kullanılabilir.
+örn: By.cssSelector("input[type='text'][value='Read only / Disabled']")
+
+Index:
+Aynı parent altındaki webelementler index kullanılarak locate edilir. :nth-of-type(index sayısı) kullanılır. Value değeri alınır.
+By.cssSelector(".value:nth-of-type(index sayısı)")
+örn: By.cssSelector(".col-12:nth-of-type(1)")
+//nth-child diğer kullanımı
+
+Parent to child:
+Parent webelementinden child webelementini locate etmek için kullanılır. CSS locatorlarda child-parent yoktur ve dezavantajlarından birisidir. ' ' kullanılarak grandson webelementine gidilir.
+
+Karşılaştırmalar:
+ //  xpath
+ //  '/' --> parent to child
+ //  css
+ //  '>' --> parent to child
+
+ //  xpath
+ //  '//' --> parent to grandson
+ //  css
+ //  ' ' --> parent to grandson
+descentant:: veya // aynı kullanıma sahip
+
+parent to child: By.cssSelector(".value:nth-of-type(1)>tagName")
+örn: By.cssSelector(".col-12:nth-of-type(1)>label")
+parent to grandson: By.cssSelector("value tagName")
+örn: By.cssSelector(".row.g-3.needs-validation button")
+
+Siblings:
+Webelementin bir sonraki kardeşini locate etmek için kullanılır.
+By.cssSelector("tagName[attribute='value']~tagName")
+örn: By.cssSelector("label[for='email']~input")
+
+
+
+
+
+

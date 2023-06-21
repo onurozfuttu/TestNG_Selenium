@@ -1,0 +1,4 @@
+Type of WebElements
+isSelected() - Radio veya checkbox webelementinin seçili olup olmadığına bakar, boolean değer döndürür.
+isEnabled() - Web elementinin interaktif olup olmadığına bakar, boolean değer döndürür.
+isDisplayed() - Web elementinin görünür olup olmadığına bakar, boolean değer döndürür.

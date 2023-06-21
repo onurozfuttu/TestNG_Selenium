@@ -1,0 +1,14 @@
+WebElement Intro
+
+getAttribute()
+Tag'ın ismi verilerek value alınır.
+örn:
+WebElement emailInputBox = driver.findElement(By.id("email"));
+String value = emailInputBox.getAttribute("class");
+
+.sendKeys - Değer gönderir
+içerisinde Keys sınıfından methodlar kullanılabilir. örn: Keys.TAB, Keys.ENTER
+
+.click - Interaktif elementlere tıklanabilmesini sağlar.
+
+findElement - locator/selector kullanarak pageSource içerisindeki webElementleri belirlemeye yarar.

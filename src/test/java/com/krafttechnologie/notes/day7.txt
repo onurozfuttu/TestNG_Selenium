@@ -1,0 +1,22 @@
+TestNG (Test Next Generation)
+@Test anotation
+Test methodu öncesinde yazılır. Test isimleri ASCII duyarlılığa sahiptir, önceliğe göre daha önce execute olur.
+
+@BeforeMethod(setUp), @AfterMethod(tearDown)
+Çalışan her test methodu öncesinde ve sonrasında bir kere çalışır.
+
+@BeforeClass, @AfterClass
+Sınıf seviyesinde birden çok test methodu olsa bile ilk method öncesinde ve son method sonrasında sadece bir kere çalışır.
+
+@Ignore
+Test methodunun çalışmamasını sağlar.
+
+(priority = sayı)
+Testin hangi öncelikte çalışacağını belirler. 0 olmaz.
+
+Assert
+TestNG kütüphanesinden gelen bir sınıftır.
+Assert.assertEquals()
+Assert.assertNotEquals()
+Assert.assertTrue()
+Assert.assertFalse()
