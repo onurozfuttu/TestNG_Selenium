@@ -1,0 +1,46 @@
+JS Alerts/ PopUps
+
+İki tip popup(açılır pencere) vardır:
+1. HTML pop-up'lar
+2. JS Pop-up'lar
+
+**Eğer normal bir popup ile karşılaşırsak, onu locate edip, bildiğimiz yolları kullanarak (click(),vs) testimize devam edeceğiz.
+
+**Eğer bir JS Pop-Up ile karşılaşırsak:
+Alert alert = driver.switchTo().alert();
+alert.accept() --> OK
+alert.dismiss() --> reject
+alert.sendKeys() --> send text/string into the box
+
+------------------------------------------------------------
+Multiple Windows
+Selenium ile test koşulurken eğer birden fazla tab/windows açılırsa Selenium default olarak ilk açıldığı sayfada kalır. driver'ı switch etmek gerekir:
+driver.getWindowHandle() --> ilk sayfanın id'si(String olarak döner, ilgili tab'a özeldir)
+driver.getWindowHandles() --> açılmış bütün pencerelerinin id'lerini alır ve bir set'in içine atar (list of set)
+driver.switchTo().window("erişmek istenilen pencerenin id'si")
+// how to switch windows
+ 	for (String windowHandle : windowHandles) {
+        if(!windowHandle.equals(currentTabId)) {
+        driver.switchTo().window(windowHandle);
+		}
+     }
+Not: Tek bir logic yok, çeşitli yöntemler kullanılabilir.
+------------------------------------------------------------
+
+frames/iframes
+
+NoSuchElement exception?
+1. Yanlış locator
+2. Time issue
+3. frame/iframe
+...
+
+Html içerisinde html varsa Selenium içerideki html bloğunu göremez, onun kapsadığı web elementler ile temasa geçemez. driver'ı switch etmek gerekir. Üç yol vardır:
+Önce //frame ya da //iframe tagı ile ana HTML içerisindeki frameler bulunur, takiben:
+1. ilgili frame web elementinin "name" ya da "id" attribute'ı varsa:
+driver.switchTo().frame("value of name")
+driver.switchTo().frame("value of id")
+2. Ana HTML içerisinde kardeş çeşitli frameler varsa index kullanılabilir. index numarası 0'dan başlar.
+driver.switchTo().frame(index number)
+3. İlgili frame web elementi doğrudan locate edilip kullanılabilir
+driver.switchTo().frame(web element)
