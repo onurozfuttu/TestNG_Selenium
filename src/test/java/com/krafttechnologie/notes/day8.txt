@@ -2,3 +2,63 @@ Type of WebElements
 isSelected() - Radio veya checkbox webelementinin seçili olup olmadığına bakar, boolean değer döndürür.
 isEnabled() - Web elementinin interaktif olup olmadığına bakar, boolean değer döndürür.
 isDisplayed() - Web elementinin görünür olup olmadığına bakar, boolean değer döndürür.
+
+Additional notes
+
+Test Levels
+Test Types
+Test Techniques
+
+-----------------------------
+
+Test Levels
+1. Unit (Component) Testing -- developer --> TestNG unit testing tool
+2. Integration Testing -- developer
+3. System Testing -- QA
+4. User Acceptance Testing (UAT, Preprod, ...) (QA, Client, user, PO, BA)
+
+Java --> TestNG, JUnit
+Phyton --> Pytest
+C# --> Nunit
+
+TestNG
+1. Testlerimizi koşturmak (no more main method)
+2. Assert classı ile testlerin sonunda verification
+
+-----------------------------
+
+WebElement element = driver.findElement(By.css(#username));
+element.isDisplayed() --> true or false
+element.isEnable() --> true or false
+element.isSelected() --> true or false
+
+
+-----------------------------
+findElements() --> returns a list of web element
+List<WebElement> elements = driver.findElements(By.xpath("formula"));
+elements.get(0).click() --> does action
+elements.get(1).getText() --> return text
+elements.get(2).isDisplayed() --> true or false
+...
+difference between findElement() and findElements()
+findElement() --> returns WebElement, if the locator does not exist then throws noSuchElementException
+findElements() --> returns a list of webElement, if the locator does not exist then returns an empty list, that is why it does not throw exception
+
+-----------------------------
+DropDowns
+It is a special web element.
+There are two ways to locate them.
+
+1. Regular way --> Locate web element and try to manipulate it according to conditions.
+Note: If you can not locate the web element which is in the dropdown menu --> right click/inspect/eventlisteners/blur/remove all options
+
+2.Select class --> If the dropdown that we want to handle has a 'select' attribute then we can use 'Select' class that is coming from Selenium.
+ 2.1. Locate the dropdown --> WebElement dropDown = driver.findElement(By.xpath("formula"));
+ 2.2. Create a select object --> Select select = new Select(dropDown);
+   2.2.1 select.getOptions() --> get all webelements and put them into a list of web element
+   2.2.2 select.selectByVisibleText("...") --> select web element
+         select.getFirstSelectedOption() --> get the web element and put into a web element bucket
+   2.2.3 select.selectByIndex("...") --> select web element
+         select.getFirstSelectedOption() --> get the web element and put into a web element bucket
+   2.2.4 select.selectByValue("...") --> select web element
+         select.getFirstSelectedOption() --> get the web element and put into a web element bucket

@@ -181,7 +181,74 @@ Webelementin bir sonraki kardeşini locate etmek için kullanılır.
 By.cssSelector("tagName[attribute='value']~tagName")
 örn: By.cssSelector("label[for='email']~input")
 
+Additional notes:
 
+XPATH (CUSTOM/ADVANCED LOCATOR)
+1. ABSOLUTE XPATH
+2. RELATIVE XPATH
+
+ABSOLUTE XPATH
+"/" --> parent to child
+Her zaman en üstten (html) başlar
+ex. html/body/li/a/ol
+WebElement element = driver.findElement(By.xpath("absoluteXpath"));
+Note: Xpath'te index istenilen elementi locate edebilmek için index kullanılabilir.
+      ex. html/body/li/a/ol[2] (aynı parent altındaysa)
+      ex. (html/body/li/a/ol)[2] (farklı parent altındalarsa)
+
+
+RELATIVE XPATH
+1. BİLİNEN ATTRİBUTE-VALUE --> find the webElement that the tagName is ... and attribute is ...
+   //tagName[@attribute='value']
+   WebElement searchBar = driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']"));
+
+2. BİLİNEN TEXT --> find the webElement that the tagName is ... and text is ...
+   //tagName[text()='text']
+   //tagName[.='text']
+   WebElement seleniumElement = driver.findElement(By.xpath("//span[text()='\"Selenium\"']"));
+
+3. STARTS-WITH
+   //tagName[starts-with(@attribute,'firstPartOfValue')] --> find the webElement that the tagName is ... and attribute starts with ...
+   //tagName[starts-with(text(),'firstPartOfText')] --> find the webElement that the tagName is ... and the text starts with ...
+   WebElement password = driver.findElement(By.xpath("//label[starts-with(@for,'inputP')]"));
+
+4. ENDS-WITH
+   //tagName[ends-with(@attribute,'lastPartOfValue')] --> find the webElement that the tagName is ... and attribute ends with ...
+   //tagName[ends-with(text(),'lastPartOfText')] --> find the webElement that the tagName is ... and the text ends with ...
+   WebElement password = driver.findElement(By.xpath("//label[ends-with(@for,'assword')]"));
+   NOTE: NOT WORKING WITH CHROME
+
+5. CONTAINS
+   //tagName[contains(@attribute,'anyPartOfValue')] --> find the webElement that the tagName is ... and attribute contains ...
+   //tagName[contains(text(),'anyPartOfText')] --> find the webElement that the tagName is ... and text contains ...
+   WebElement password = driver.findElement(By.xpath("//label[contains(@for,'putPass')]"));
+
+6. AND && OR
+
+   AND --> both should be validated
+   //tagName[@attribute='value'][@attribute1='value1']
+   //tagName[@attribute='value and @attribute1='value1']
+   WebElement basicModal = driver.findElement(By.xpath("//button[@type='button'][@data-bs-target='#basicModal']"));
+
+   OR --> having one of them is enough
+   //tagName[@attribute='value or @attribute1='value1']
+   WebElement messagesElement = driver.findElement(By.xpath("//button[@data-bs-target='#v-pills-messages' or
+@id='v-pills-messages-tab']"));
+
+ADDITIONAL FEATURES
+'/' --> parent to child
+'//' --> parent to grandson
+'/..' --> child to parent
+'xpath/preceding-sibling::*' --> go to preceding-sibling
+'xpath/following-sibling::*' --> go to following-sibling
+'*' --> means all
+ex. //*[@attribute='value'] --> scan all tags
+ex. //tagName[@*='value'] -->  scan all attributes
+
+Note:If the formula points out more than one value that is under the same parent
+//tagName[@attribute='value'][number]
+Note: If the formula points out more than one value that is not under the same parent
+(//tagName[@attribute='value'])[number]
 
 
 
