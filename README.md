@@ -72,5 +72,19 @@ Link Text and Partial Link Text
   selectByIndex()\
   selectByValue()\
   getFirstSelectedOption()\
-  Reaching dropdown options as removing browser blur
+  Reaching dropdown options as removing browser blur\
 
+  <b>Day 10</b>\
+<i>Alerts, Multiple Windows, iframe</i>\
+  Alert class (driver.switchto().alert())\
+  Alert -\
+  .accept()\
+  .dismiss()\
+  .sendKeys()\
+  Browser IDs -\
+  getWindowHandle(), getWindowHandles()\
+  driver.switchto.window()\
+  iframe(html inside html) -
+  with iframe attribute: driver.switchTo.frame()\
+  by Index, by webElement
+  
