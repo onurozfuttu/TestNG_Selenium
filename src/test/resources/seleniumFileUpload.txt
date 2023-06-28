@@ -1,0 +1,3 @@
+Hello World
+
+/Users/onur/IdeaProjects/Batch4_TestNG_Selenium/src/test/resources/seleniumFileUpload.txt
