@@ -87,4 +87,23 @@ Link Text and Partial Link Text
   iframe(html inside html) -
   with iframe attribute: driver.switchTo.frame()\
   by Index, by webElement
+
+  <b>Day 11</b>\
+<i>Waits</i>\
+  Implicit\
+  Explicit\
+
+  <b>Day 12</b>\
+<i>Actions, JSExecutor, FileUpload</i>\
+  Action class\
+  JS Executor class\
+  File upload test\
+
+  <b>Day 13</b>\
+<i>Webtables</i>\
+  Web table test\
+
+  
+
+  
   
