@@ -103,6 +103,12 @@ Link Text and Partial Link Text
 <i>Webtables</i>\
   Web table test\
 
+  <b>Day 13</b>\
+<i>Singleton</i>\
+  Driver\
+  configuration.properties\
+  TestBase
+
   
 
   
