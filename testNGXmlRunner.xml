@@ -1,0 +1,109 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<!-- How to run specific package-->
+
+<!--<suite name="Kraft Automation" verbose="1">
+    <test name="Kraft tests">
+        
+        <packages>
+            <package name="com.krafttechnologie.tests.day15_pom1"></package>
+        </packages>
+    </test>
+</suite>
+-->
+
+<!-- How to run more than one package -->
+
+<suite name="Kraft Automation" verbose="1">
+    <test name="Kraft tests">
+
+        <packages>
+            <package name="com.krafttechnologie.tests.day15_pom1"></package>
+            <package name="com.krafttechnologie.tests.day16_pom2"></package>
+        </packages>
+    </test>
+</suite>
+
+<!-- How to run specific class -->
+<!--
+<suite name="Kraft Automation" verbose="1">
+    <test name="Kraft tests">
+
+        <classes>
+            <class name="com.krafttechnologie.tests.day12_action_JS_FileUpload.C01_ActionTest"></class>
+        </classes>
+    </test>
+</suite>
+-->
+
+<!-- How to run different classes together -->
+<!--
+<suite name="Kraft Automation" verbose="1">
+    <test name="Kraft tests">
+
+        <classes>
+            <class name="com.krafttechnologie.tests.day12_action_JS_FileUpload.C01_ActionTest"></class>
+            <class name="com.krafttechnologie.tests.day12_action_JS_FileUpload.C02_JS_Executor_Demo"></class>
+        </classes>
+    </test>
+</suite>
+-->
+
+<!-- How to run different methods together -->
+<!--
+<suite name="Kraft Automation" verbose="1">
+    <test name="Kraft tests">
+
+        <classes>
+            <class name="com.krafttechnologie.tests.day12_action_JS_FileUpload.C02_JS_Executor_Demo">
+                <methods>
+                    <include name="clickWithJS"></include>
+                    <include name="typeWithJS"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
+-->
+
+<!-- ??How to run different test -->
+<!--
+<suite name="Kraft Automation" verbose="1">
+    <test name="Kraft tests">
+
+        <classes>
+
+            <class name="com.krafttechnologie.tests.day12_action_JS_FileUpload.C02_JS_Executor_Demo">
+                <methods>
+                    <include name="typeWithJS"></include>
+                </methods>
+            </class>
+
+            <class name="com.krafttechnologie.tests.day12_action_JS_FileUpload.C01_ActionTest">
+                <methods>
+                    <include name="hoverOver"></include>
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+</suite>
+-->
+
+<!-- How to run different methods that are in different classes -->
+<!--
+<suite name="Kraft Automation" verbose="1">
+    <test name="Kraft tests">
+
+        <classes>
+            <class name="com.krafttechnologie.tests.day12_action_JS_FileUpload.C02_JS_Executor_Demo">
+                <methods>
+                    <exclude name="scrollDownAndUp"></exclude>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
+-->
+
+
+

@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class C03_FindUpload {
+public class C03_FileUpload {
     WebDriver driver;
 
     @BeforeMethod
@@ -50,19 +50,21 @@ public class C03_FindUpload {
         String projectPath = System.getProperty("user.dir");
         String filePath = "src/test/resources/seleniumFileUpload.txt";
 
+
         String fullPath = projectPath+"/"+filePath;
 
         System.out.println(fullPath);
 
         driver.get("https://the-internet.herokuapp.com/upload");
         WebElement chooseFile = driver.findElement(By.cssSelector("#file-upload"));
-        chooseFile.sendKeys(filePath);
+        chooseFile.sendKeys(fullPath);
 
         driver.findElement(By.id("file-submit")).click();
 
         String actual = driver.findElement(By.id("uploaded-files")).getText();
 
         Assert.assertEquals(actual,"seleniumFileUpload.txt");
+
     }
 
     @Test
