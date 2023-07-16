@@ -109,6 +109,37 @@ Link Text and Partial Link Text
   configuration.properties\
   TestBase
 
+  <b>Day 14</b>\
+<i>Singleton</i>\
+  configuration.properties\
+  Singleton design pattern\
+
+  <b>Day 15-16-17</b>\
+<i>Page Object Model(POM)</i>\
+    TestBase\
+    PageTest\
+
+  <b>Day 18</b>\
+<i>Extent Report</i>\
+  @BeforeTest\
+  @AfterTest\
+  ItestResult\
+
+  <b>Day 19</b>\
+<i>TestNG XML Runner</i>\
+  Suite\
+  Classes\
+  Include\
+  Exclude\
+
+  <b>Day 20</b>\
+<i>Data Driven Framework</i>\
+  ExcelUtil\
+  DataProvider\
+  
+
+  
+
   
 
   
