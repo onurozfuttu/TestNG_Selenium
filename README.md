@@ -1,4 +1,4 @@
-# Kraft_Batch4_TestNG_Selenium
+TestNG_Selenium
 
 <b>Day 01</b>\
 <i>Automation Intro</i>\
